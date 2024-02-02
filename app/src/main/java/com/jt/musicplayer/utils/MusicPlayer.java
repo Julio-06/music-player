@@ -12,10 +12,6 @@ import com.jt.musicplayer.R;
 import java.security.PublicKey;
 
 public class MusicPlayer {
-    private String status;
-    private MediaPlayer mediaPlayer;
-    private AudioManager audioManager;
-
     public void play(Context context, int uri) {
         Intent musicPlayerService = new Intent(context, MusicPlayerService.class);
         musicPlayerService.setAction(MusicPlayerService.ACTION_PLAY);
@@ -30,11 +26,10 @@ public class MusicPlayer {
         context.startService(musicPlayerService);
     }
 
-    public MediaPlayer getMediaPlayer() {
-        return mediaPlayer;
-    }
-
-    public void setMediaPlayer(MediaPlayer mediaPlayer) {
-        this.mediaPlayer = mediaPlayer;
+    public void changePosition(Context context, int newPosition) {
+        Intent musicPlayerService = new Intent(context, MusicPlayerService.class);
+        musicPlayerService.setAction(MusicPlayerService.ACTION_CHANGE_POSITION);
+        musicPlayerService.putExtra("CHANGE_POSITION", newPosition);
+        context.startService(musicPlayerService);
     }
 }
