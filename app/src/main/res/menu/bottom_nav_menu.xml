@@ -7,7 +7,7 @@
         android:title="@string/title_music_player" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_my_music"
         android:icon="@drawable/ic_music_library"
         android:title="@string/title_music_library" />
 

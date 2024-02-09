@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -117,7 +118,8 @@ public class MusicPlayerFragment extends Fragment {
 
         if(isPlay){
             vImgBtn.setImageResource(R.drawable.ic_music_stop);
-            musicPlayer.play(getContext(), R.raw.wtf);
+            Uri uri = Uri.parse("android.resource://" + getContext().getPackageName() + "/" + R.raw.wtf);
+            musicPlayer.play(getContext(), uri);
 
         }else {
             vImgBtn.setImageResource(R.drawable.ic_music_play);

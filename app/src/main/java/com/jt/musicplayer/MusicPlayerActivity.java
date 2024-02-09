@@ -112,7 +112,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
 
         if(isPlay){
             vImgBtn.setImageResource(R.drawable.ic_music_stop);
-            musicPlayer.play(this, R.raw.wtf);
+            //musicPlayer.play(this, R.raw.wtf);
 
         }else {
             vImgBtn.setImageResource(R.drawable.ic_music_play);

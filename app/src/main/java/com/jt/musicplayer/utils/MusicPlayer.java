@@ -12,10 +12,10 @@ import com.jt.musicplayer.R;
 import java.security.PublicKey;
 
 public class MusicPlayer {
-    public void play(Context context, int uri) {
+    public void play(Context context, Uri uri) {
         Intent musicPlayerService = new Intent(context, MusicPlayerService.class);
         musicPlayerService.setAction(MusicPlayerService.ACTION_PLAY);
-        musicPlayerService.putExtra("MUSIC", uri);
+        musicPlayerService.putExtra("MUSIC", uri.toString());
         context.startService(musicPlayerService);
 
     }

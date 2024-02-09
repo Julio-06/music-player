@@ -39,8 +39,9 @@ public class MusicPlayerService extends Service implements MediaPlayer.OnPrepare
         if(intent.getAction().equals(ACTION_PLAY)){
             if(!mediaPlayer.isPlaying() && resumePosition == 0){
                 try {
-                    int music = intent.getIntExtra("MUSIC", 0);
-                    this.setMusicUri(Uri.parse("android.resource://" + getPackageName() + "/" + music));
+                    String musicPath = intent.getStringExtra("MUSIC");
+
+                    this.setMusicUri(Uri.parse(musicPath));
 
                     mediaPlayer.setDataSource(this, this.getMusicUri());
                     mediaPlayer.prepareAsync(); // prepare async to not block main thread
